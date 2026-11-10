@@ -1,0 +1,6 @@
+{
+  "name": "SahaayaNet – Emergency Mesh Communication Network",
+  "description": "Internet-independent emergency communication network featuring peer-to-peer BLE & Wi-Fi Direct mesh routing, store-carry-forward DTN delivery, Room DB offline storage, SOS dispatch triage, and incident command dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

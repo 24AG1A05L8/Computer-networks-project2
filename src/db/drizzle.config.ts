@@ -1,0 +1,25 @@
+import { defineConfig } from 'drizzle-kit';
+import * as dotenv from 'dotenv';
+
+// Load environment variables from .env file
+dotenv.config();
+
+const sqlHost = process.env.SQL_HOST || '/cloudsql/citric-snowfall-qkpm1:asia-south1:ai-studio-52766cc6';
+const sqlDbName = process.env.SQL_DB_NAME || 'postgres';
+const user = process.env.SQL_ADMIN_USER || 'postgres';
+const password = process.env.SQL_ADMIN_PASSWORD || '';
+
+export default defineConfig({
+  schema: './src/db/schema.ts',
+  out: './drizzle',
+  dialect: 'postgresql',
+  schemaFilter: ['public'],
+  dbCredentials: {
+    host: sqlHost,
+    user: user,
+    password: password,
+    database: sqlDbName,
+    ssl: false,
+  },
+  verbose: true,
+});
